@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lojadecamisetas</title>
+    <title>Loja de Camisetas</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,10 @@
   </head>
 
   <body>
+    <%= form_tag produtos_path, method: :get do %>
+      <%= text_field_tag :nome, @nome_a_buscar %>
+      <%= button_to "Buscar" %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

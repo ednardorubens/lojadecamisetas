@@ -1,8 +1,7 @@
 <%= form_with(model: produto, local: true) do |form| %>
   <% if produto.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(produto.errors.count, "error") %> prohibited this produto from being saved:</h2>
-
+      <h2><%= pluralize(produto.errors.count, "erro") %> impede a criação deste produto:</h2>
       <ul>
       <% produto.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -17,7 +16,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :descricao %>
+    <%= form.label :descricao, "Descrição" %>
     <%= form.text_area :descricao, id: :produto_descricao %>
   </div>
 
@@ -27,11 +26,11 @@
   </div>
 
   <div class="field">
-    <%= form.label :preco %>
+    <%= form.label :preco, "Preço" %>
     <%= form.text_field :preco, id: :produto_preco %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Criar Produto" %>
   </div>
 <% end %>
