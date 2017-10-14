@@ -7,12 +7,11 @@ class ProdutosController < ApplicationController
     @nome_a_buscar = params[:nome]
     if (@nome_a_buscar)
       @produtos = Produto.order(:nome).limit(50).where "nome like ?", "%#{@nome_a_buscar}%"
+      respond_with(@produtos)
     else
       @produtos = Produto.order(:nome).limit(50)
+      respond_with(@produtos)
     end
-  end
-
-  def busca
   end
 
   # GET /produtos/1
@@ -32,41 +31,22 @@ class ProdutosController < ApplicationController
   # POST /produtos
   # POST /produtos.json
   def create
-    @produto = Produto.new(produto_params)
-
-    respond_to do |format|
-      if @produto.save
-        format.html { redirect_to @produto, notice: 'Produto foi criado com sucesso.' }
-        format.json { render :show, status: :created, location: @produto }
-      else
-        format.html { render :new }
-        format.json { render json: @produto.errors, status: :unprocessable_entity }
-      end
-    end
+    @produto = Produto.create(produto_params)
+    respond_with @produto
   end
 
   # PATCH/PUT /produtos/1
   # PATCH/PUT /produtos/1.json
   def update
-    respond_to do |format|
-      if @produto.update(produto_params)
-        format.html { redirect_to @produto, notice: 'Produto foi atualizado com sucesso.' }
-        format.json { render :show, status: :ok, location: @produto }
-      else
-        format.html { render :edit }
-        format.json { render json: @produto.errors, status: :unprocessable_entity }
-      end
-    end
+    @produto.update(produto_params)
+    respond_with @produto
   end
 
   # DELETE /produtos/1
   # DELETE /produtos/1.json
   def destroy
     @produto.destroy
-    respond_to do |format|
-      format.html { redirect_to produtos_url, notice: 'Produto foi removido com sucesso.' }
-      format.json { head :no_content }
-    end
+    respond_with(nil, :location => produtos_path)
   end
 
   private
