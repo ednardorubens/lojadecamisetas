@@ -18,6 +18,8 @@ gem 'sass-rails', '~> 5.0.6'
 gem 'uglifier', '>= 1.3.0'
 # Internacionalização
 gem 'rails-i18n', '~> 5.0.4'
+# Responders
+gem 'responders', '~> 2.4.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
