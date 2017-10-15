@@ -5,23 +5,14 @@ class ProdutosController < ApplicationController
   # GET /produtos.json
   def index
     @nome_a_buscar = params[:nome]
-    if (@nome_a_buscar)
-      @produtos = Produto.order(:nome).limit(50).where "nome like ?", "%#{@nome_a_buscar}%"
-      respond_with(@produtos)
-    else
-      @produtos = Produto.order(:nome).limit(50)
-      respond_with(@produtos)
-    end
+    cond = (@nome_a_buscar ? "nome like ?": "")
+    param = (@nome_a_buscar ? "%#{@nome_a_buscar}%": "")
+    @produtos = Produto.where(cond, param).order(:nome).limit(LIMIT_REGISTRY)
   end
 
   # GET /produtos/1
   # GET /produtos/1.json
   def show
-  end
-
-  # GET /produtos/new
-  def new
-    @produto = Produto.new
   end
 
   # GET /produtos/1/edit
@@ -46,7 +37,7 @@ class ProdutosController < ApplicationController
   # DELETE /produtos/1.json
   def destroy
     @produto.destroy
-    respond_with(nil, :location => produtos_path)
+    respond_with @produto
   end
 
   private

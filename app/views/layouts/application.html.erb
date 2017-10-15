@@ -9,10 +9,6 @@
   </head>
 
   <body>
-    <%= form_tag produtos_path, method: :get do %>
-      <%= text_field_tag :nome, @nome_a_buscar %>
-      <%= button_to "Buscar" %>
-    <% end %>
     <%= yield %>
   </body>
 </html>
