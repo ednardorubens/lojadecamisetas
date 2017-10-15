@@ -20,8 +20,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'rails-i18n', '~> 5.0.4'
 # Responders
 gem 'responders', '~> 2.4.0'
-# React
-gem 'react_on_rails', '~> 9.0.3'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
