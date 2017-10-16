@@ -1,0 +1,43 @@
+<%= form_with(model: produto, local: true) do |form| %>
+  <h1><%= (produto.id ? "Editar" : "Criar")%> Produto</h1>
+  <% if produto.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(produto.errors.count, "erro impede", "erros impedem") %> a criação deste produto:</h2>
+      <ul>
+      <% produto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :nome %>
+    <%= form.text_field :nome, id: :produto_nome, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :descricao, "Descrição" %>
+    <%= form.text_area :descricao, id: :produto_descricao, class: "form-control", rows: 4 %>
+  </div>
+
+  <div class="form-group form-inline">
+    <div class="form-group">
+      <%= form.label :quantidade %>
+      <%= form.number_field :quantidade, id: :produto_quantidade, step: 1, class: "form-control" %>
+    </div>
+  
+    <div class="form-group">
+      <%= form.label :preco, "Preço" %>
+      <%= form.text_field :preco, id: :produto_preco, class: "form-control" %>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <%= form.submit "Salvar Produto", class: "btn btn-primary" %>
+    <% if produto.id %>
+    <%= link_to 'Mostrar', @produto, class: "btn btn-primary" %>
+    <% end %>
+    <%= link_to 'Voltar', produtos_path, class: "btn btn-primary" %>
+  </div>
+<% end %>

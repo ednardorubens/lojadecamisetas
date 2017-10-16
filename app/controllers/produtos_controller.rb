@@ -5,18 +5,29 @@ class ProdutosController < ApplicationController
   # GET /produtos.json
   def index
     @nome_a_buscar = params[:nome]
-    cond = (@nome_a_buscar ? "nome like ?": "")
-    param = (@nome_a_buscar ? "%#{@nome_a_buscar}%": "")
+    cond = ""
+    param = ""
+    if (@nome_a_buscar)
+      cond = "nome like ?"
+      param = "%#{@nome_a_buscar}%"
+    end
     @produtos = Produto.where(cond, param).order(:nome).limit(LIMIT_REGISTRY)
   end
-
+  
+  # GET /produtos/new
+  def new
+    @produto = Produto.new
+    render "produtos/_form", locals: { produto: @produto }
+  end
+  
   # GET /produtos/1
   # GET /produtos/1.json
   def show
   end
-
+  
   # GET /produtos/1/edit
   def edit
+    render "produtos/_form", locals: { produto: @produto }
   end
 
   # POST /produtos
