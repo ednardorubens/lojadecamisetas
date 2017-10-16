@@ -17,7 +17,10 @@ class ProdutosController < ApplicationController
   # GET /produtos/new
   def new
     @produto = Produto.new
-    render "produtos/_form", locals: { produto: @produto }
+    respond_with(@produto) do |format|
+      format.html { render "produtos/_form" }
+    end
+    #response_with(resource, render: { template: 'produtos/_form' })
   end
   
   # GET /produtos/1
@@ -27,7 +30,6 @@ class ProdutosController < ApplicationController
   
   # GET /produtos/1/edit
   def edit
-    render "produtos/_form", locals: { produto: @produto }
   end
 
   # POST /produtos
