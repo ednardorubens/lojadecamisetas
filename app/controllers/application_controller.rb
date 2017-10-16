@@ -6,7 +6,8 @@ class ApplicationController < ActionController::Base
 
   LIMIT_REGISTRY = 50
 
-  respond_to :html, :json
+  respond_to :html
+  respond_to :json, :only => [:index, :show]
   responders :flash, :http_cache
   before_action :verify_requested_format!
 end
