@@ -1,24 +1,25 @@
-<p id="notice"><%= notice %></p>
-
-<p>
+<div class="form-group">
   <strong>Nome:</strong>
   <%= @produto.nome %>
-</p>
+</div>
 
-<p>
+<div class="form-group">
   <strong>Descrição:</strong>
   <%= @produto.descricao %>
-</p>
+</div>
 
-<p>
-  <strong>Quantidade:</strong>
-  <%= @produto.quantidade %>
-</p>
+<div class="form-group form-inline">
+  <div class="form-group">
+    <strong>Quantidade:</strong>
+    <%= @produto.quantidade %>
+  </div>
 
-<p>
-  <strong>Preço:</strong>
-  <%= @produto.preco %>
-</p>
-
-<%= link_to 'Editar', edit_produto_path(@produto) %> |
-<%= link_to 'Voltar', produtos_path %>
+  <div class="form-group">
+    <strong>Preço:</strong>
+    <%= @produto.preco %>
+  </div>
+</div>
+<div class="form-group">
+  <%= link_to 'Editar', edit_produto_path(@produto), class: "btn btn-primary" %>
+  <%= link_to 'Voltar', produtos_path, class: "btn btn-primary" %>
+</div>

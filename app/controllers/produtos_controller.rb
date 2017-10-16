@@ -18,10 +18,8 @@ class ProdutosController < ApplicationController
   def new
     @produto = Produto.new
     respond_with(@produto) do |format|
-      format.html { render "produtos/_form" }
+      format.html { render "produtos/edit" }
     end
-    #response_with(@produto, render: { template: 'produtos/_form' })
-    #response_with(@produto, :action => :edit)
   end
   
   # GET /produtos/1
