@@ -1,15 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Produtos</h1>
-<%= form_tag produtos_path, method: :get do %>
-  <%= text_field_tag :nome, @nome_a_buscar %>
-  <%= button_to "Buscar" %>
-<% end %>
 <div class="container">
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>Nome</th>
+        <th>
+          <%= form_tag produtos_path, method: :get do %>
+            Nome <%= text_field_tag :nome, nil,
+              placeholder: 'Filtrar por nome',
+              onkeyup: "$(this).parent('form').submit();" %>
+          <% end %>
+        </th>
         <th>Descricao</th>
         <th>Quantidade</th>
         <th>Preco</th>

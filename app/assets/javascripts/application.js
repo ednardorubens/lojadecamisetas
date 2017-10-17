@@ -10,6 +10,16 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery3
+//= require jquery_ujs
+//= require jquery-ui
+//= require jquery-ui/core
+//= require jquery-ui/widget
+//= require jquery-ui/position
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+$(function(){
+    $(":input:enabled:visible:first").focus();
+});

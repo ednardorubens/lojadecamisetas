@@ -22,6 +22,9 @@ gem 'rails-i18n', '~> 5.0.4'
 gem 'responders', '~> 2.4.0'
 # Bootstrap
 gem 'twitter-bootstrap-rails', '~> 4.0'
+# jQuery
+gem 'jquery-rails', '~> 4.3'
+gem 'jquery-ui-rails', '~> 5.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
