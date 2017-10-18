@@ -8,8 +8,8 @@
         <th>
           <%= form_tag produtos_path, method: :get do %>
             Nome <%= text_field_tag :nome, nil,
-              placeholder: 'Filtrar por nome',
-              onkeyup: "$(this).parent('form').submit();" %>
+              placeholder: 'Filtrar por nome' %>
+            <%= fa_icon "search", onclick: "$(this).parent('form').submit();" %>
           <% end %>
         </th>
         <th>Descricao</th>
@@ -26,11 +26,11 @@
           <td><%= produto.descricao %></td>
           <td><%= produto.quantidade %></td>
           <td><%= produto.preco %></td>
-          <td><%= link_to 'Mostrar', produto %></td>
-          <td><%= link_to 'Editar', edit_produto_path(produto) %></td>
+          <td><%= link_to '', produto, class: "fa fa-search fa-lg" %></td>
+          <td><%= link_to '', edit_produto_path(produto), class: "fa fa-pencil-square-o fa-lg" %></td>
           <td>
-            <%= link_to 'Remover',
-            produto, method: :delete, class: "btn btn-danger", 
+            <%= link_to '',
+            produto, method: :delete, class: "fa fa-eraser fa-lg", 
             data: { confirm: "Tem certeza que deseja remover?" } %>
           </td>
         </tr>

@@ -12,4 +12,6 @@
  * bacground-color: #061c2c; color: #aadbeb; background-color: #242729; color: #444; font-family:'Segoe UI',Segoe,'Helvetica Neue',Lucida Grande,Arial,sans-serif;font-size:11px
  *= require_tree .
  *= require_self
+ *= require jquery-ui
+ *= require font-awesome
  */

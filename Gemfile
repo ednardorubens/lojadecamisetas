@@ -22,6 +22,7 @@ gem 'rails-i18n', '~> 5.0.4'
 gem 'responders', '~> 2.4.0'
 # Bootstrap
 gem 'twitter-bootstrap-rails', '~> 4.0'
+gem 'font-awesome-rails', '~> 4.7'
 # jQuery
 gem 'jquery-rails', '~> 4.3'
 gem 'jquery-ui-rails', '~> 5.0'
