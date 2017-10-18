@@ -26,8 +26,14 @@
           <td><%= produto.descricao %></td>
           <td><%= produto.quantidade %></td>
           <td><%= produto.preco %></td>
-          <td><%= link_to '', produto, class: "fa fa-search fa-lg" %></td>
-          <td><%= link_to '', edit_produto_path(produto), class: "fa fa-pencil-square-o fa-lg" %></td>
+          <td>
+            <%= link_to '', produto,
+            class: "fa fa-search fa-lg" %>
+          </td>
+          <td>
+            <%= link_to '', edit_produto_path(produto),
+            class: "fa fa-pencil-square-o fa-lg" %>
+          </td>
           <td>
             <%= link_to '',
             produto, method: :delete, class: "fa fa-eraser fa-lg", 
