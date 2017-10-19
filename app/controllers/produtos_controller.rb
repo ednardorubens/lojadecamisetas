@@ -12,9 +12,6 @@ class ProdutosController < ApplicationController
   # GET /produtos/new
   def new
     @produto = Produto.new
-    respond_with(@produto) do |format|
-      format.html { render "produtos/edit" }
-    end
   end
   
   # GET /produtos/1
