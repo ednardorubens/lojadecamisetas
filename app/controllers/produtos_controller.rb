@@ -5,13 +5,8 @@ class ProdutosController < ApplicationController
   # GET /produtos.json
   def index
     @nome_a_buscar = params[:nome]
-    cond = ""
-    param = ""
-    if (@nome_a_buscar)
-      cond = "nome like ?"
-      param = "%#{@nome_a_buscar}%"
-    end
-    @produtos = Produto.where(cond, param).order(:nome).limit(LIMIT_REGISTRY)
+    @produtos = Produto.order(:nome).limit(LIMIT_REGISTRY)
+    @produtos = Produto.where("nome like ?", "%#{@nome_a_buscar}%") if @nome_a_buscar && @nome_a_buscar != ""
   end
   
   # GET /produtos/new

@@ -27,15 +27,15 @@
           <td><%= produto.quantidade %></td>
           <td><%= produto.preco %></td>
           <td>
-            <%= link_to '', produto,
+            <%= link_to nil, produto,
             class: "fa fa-search fa-lg" %>
           </td>
           <td>
-            <%= link_to '', edit_produto_path(produto),
+            <%= link_to nil, edit_produto_path(produto),
             class: "fa fa-pencil-square-o fa-lg" %>
           </td>
           <td>
-            <%= link_to '',
+            <%= link_to nil,
             produto, method: :delete, class: "fa fa-eraser fa-lg", 
             data: { confirm: "Tem certeza que deseja remover?" } %>
           </td>
@@ -43,5 +43,6 @@
       <% end %>
     </tbody>
   </table>
-  <%= link_to 'Criar Produto', new_produto_path %>
+  <%= link_to 'Adicionar Produtos', new_produto_path,
+      class: "fa fa-plus-circle fa-lg" %>
 </div>
