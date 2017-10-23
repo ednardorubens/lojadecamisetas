@@ -20,15 +20,14 @@ pre {
 }
 
 a {
-  color: #000;
-
-  &:visited {
-    color: #666;
-  }
+  color: #000000;
 
   &:hover {
-    color: #fff;
-    background-color: #000;
+    text-decoration: none;
+  }
+
+  &.btn:visited {
+    color: #ffffff;
   }
 }
 
@@ -50,11 +49,11 @@ div {
   color: green;
 }
 
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
+// .field_with_errors {
+//   padding: 2px;
+//   background-color: red;
+//   display: table;
+// }
 
 #error_explanation {
   width: 450px;

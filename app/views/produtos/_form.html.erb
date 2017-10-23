@@ -1,5 +1,7 @@
 <%= form_with(model: produto, local: true) do |form| %>
-  <h1><%= (produto.id ? "Editar" : "Criar")%> Produto</h1>
+<div class="page-header">
+    <h1><%= (produto.id ? "Editar" : "Criar")%> Produto</h1>
+  </div>
   <% if produto.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(produto.errors.count, "erro impede", "erros impedem") %> a criação deste produto:</h2>
@@ -34,10 +36,13 @@
   </div>
   
   <div class="form-group">
-    <%= form.submit "Salvar Produto", class: "btn btn-primary" %>
+    <%= form.submit " Salvar Produto", 
+      class: "btn btn-primary btn-lg fa fa-floppy-o fa-lg" %>
     <% if produto.id %>
-    <%= link_to 'Mostrar', @produto, class: "btn btn-primary" %>
+    <%= link_to " Mostrar", @produto,
+      class: "btn btn-primary btn-lg fa fa-search fa-lg" %>
     <% end %>
-    <%= link_to 'Voltar', produtos_path, class: "btn btn-primary" %>
+    <%= link_to " Voltar", produtos_path,
+      class: "btn btn-primary btn-lg fa fa-arrow-left fa-lg" %>
   </div>
 <% end %>

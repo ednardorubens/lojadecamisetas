@@ -5,6 +5,47 @@
   =require twitter-bootstrap-static/sprites
 */
 
-a.btn:visited {
-    color: #ffffff;
+label::after {
+  content: ':'
+}
+
+.table {
+  border: 1px solid #000000;
+
+  th, td, input {
+    border: 1px solid #000000 !important;
+  }
+  
+  input {
+    padding-left: 4px;
+  }
+
+  th {
+    font-size: 1.1em;
+    text-align: center;
+  }
+
+  a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.page-header {
+  padding-bottom: 0;
+  margin: 40px 0 40px;
+  border-bottom: 1px solid #000;
+}
+
+.btn {
+  border-radius: 0;
+  border-color: #000000 !important;
+}
+
+.form-control {
+  border-radius: 0;
+}
+
+.container {
+    width: 90%;
 }
