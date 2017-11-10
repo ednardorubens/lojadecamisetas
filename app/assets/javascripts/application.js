@@ -18,5 +18,17 @@
 //= require_tree .
 
 $(function(){
-    $(":input:enabled:visible:first").focus();
+    $("input:visible:enabled:first").focus();
+
+    $("#modalExcluir").on("show.bs.modal", function (event) {
+        var link = $(event.relatedTarget);
+        var btn_excluir = $("#btn-excluir");
+        var url = link.data("href");
+        btn_excluir.on("click", function (e) {
+            e.preventDefault();
+            var formExcluir = $("#formExcluir");
+            formExcluir.attr("action", url);
+            formExcluir.submit();
+        });
+    });
 });

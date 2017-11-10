@@ -15,4 +15,33 @@
       <%= yield %>
     </div>
   </body>
+  <div id="modalExcluir" class="modal fade" tabindex="-1" role="dialog"
+    aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+            <span class="glyphicon glyphicon-remove-sign" aria-hidden="true" style="color: red;"></span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">Excluir</h4>
+        </div>
+        <div class="modal-body">
+          <p>Deseja realmente excluir?</p>
+        </div>
+        <div class="modal-footer">
+          <button id="btn-excluir" type="button" class="btn btn-primary">
+            <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+            Excluir
+          </button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">
+            <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
+            Cancelar
+          </button>
+        </div>
+        <form id="formExcluir" method="POST" class="hidden">
+          <input type="hidden" name="_method" value="DELETE" />
+        </form>
+      </div>
+    </div>
+  </div>
 </html>

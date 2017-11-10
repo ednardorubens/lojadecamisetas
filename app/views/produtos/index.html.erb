@@ -29,10 +29,12 @@
           <td><%= produto.nome %></td>
           <td><%= produto.descricao %></td>
           <td><%= produto.quantidade %></td>
-          <td><%= produto.preco %></td>
+          <td><%= number_to_currency(produto.preco, unit: "R$", separator: ",", delimiter: ".") %></td>
           <td>
-            <%= link_to "", produto,
-            title: "Mostrar", class: "fa fa-search fa-lg" %>
+            <a data-toggle="modal" data-target="#modalExcluir"
+              data-href="${path}/usuario/remover/${usuario.id}">
+              <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+            </a>
           </td>
           <td>
             <%= link_to "", edit_produto_path(produto),
